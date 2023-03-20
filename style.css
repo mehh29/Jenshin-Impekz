@@ -1,0 +1,512 @@
+@font-face {
+  font-family: fontGenshin;
+  src: url("Font/GenshinFont/ja-jp.ttf");
+}
+
+@font-face {
+  font-family: Tahoma;
+  src: url("Font/TahomaFont/TAHOMA_0.TTF");
+}
+::-webkit-scrollbar{
+  display: none;
+}
+a{
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: tahoma;
+}
+
+/* navbar */
+.navigation-bar {
+  position: fixed;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 0.3vh 7vw;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navbar-left .logo img {
+  width: 100%;
+}
+
+.navbar-left {
+  display: flex;
+  gap: 3vw;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: 11vh;
+}
+
+.navbar-left .menu a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+.menu a:hover {
+  border-top: 0.2vw solid cyan;
+  border-bottom: 0 solid transparent;
+  opacity: 100%;
+  transition: 300ms;
+  text-shadow: 0px 0px 13px cyan;
+}
+
+.navbar-right {
+  color: white;
+}
+
+.navbar-right a {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-family: Tahoma;
+  gap: 1.5vw;
+}
+
+.navbar-right a:hover {
+  color: gray;
+  transition: 100ms;
+}
+
+.login a {
+  display: flex;
+  text-decoration: none;
+}
+.login a i {
+  font-size: 2.7rem;
+}
+
+.home-page{
+  scroll-snap-align: start;
+}
+
+.news-page{
+  scroll-snap-align: end;
+}
+
+/* first display */
+.home-background{
+  background-image: url(assets/HOME/Eula.Lawrence.full.3336255.jpg);
+  background-size: cover;
+  justify-content: center;
+  align-items: end;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+} 
+
+.button{
+  flex-direction: column;
+  position: absolute;
+  top: 70%;
+}
+
+.tag{
+  width: 11vw;
+  height: 11vh;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  display: flex;
+  margin-left: 3vh;
+  margin-bottom: 2vh;
+}
+.tag img{
+  justify-content: left;
+}
+
+.link-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  
+  gap: 7vh;
+}
+
+.link-button li a img{
+  align-items: center;
+  opacity: 60%;
+  transition: 300ms;
+  
+}
+
+.link-button li a img:hover{
+  align-items: center;
+  opacity: 100%;
+  transition: 300ms;
+}
+
+/* News */
+
+.news-background{
+  background-image: url(assets/News/29770c4.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  gap: 3vw;
+  padding: 7vw;
+
+}
+
+.news-background::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.189);
+
+}
+.news-title{
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  gap: 4vw;
+  z-index: 1;
+}
+
+.news-title h1{
+  color: white;
+  font-family: Tahoma;
+  font-weight: lighter;
+
+}
+
+.box-list-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  gap: 4vw;
+}
+
+.box-container{
+  width: 27vw;
+  height: 50vh;
+  
+}
+
+.box-text-container{
+  background-color: rgba(0, 0, 0, 0.601);
+  height: 30vw;
+  width: 100%;
+  padding: 2vw;
+  border-radius: 0.5vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2vh;
+
+}
+
+.box-text-container:hover h2 {
+  text-decoration: underline;
+}
+
+.box{
+  width: 100%;
+  height: 40vh;
+  gap: 1.7vw;
+}
+
+.box img{
+  width: 100%;
+  /* height: 100%; */
+  background-size: cover;
+  
+}
+.title-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: left;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.title-container h2{
+  font-family: Tahoma;
+  font-size: 1.5rem;
+  color: white;
+  text-align: left;
+  font-weight: lighter;
+}
+
+.title-container h3{
+  letter-spacing: 0.04rem;
+  
+  font-family: Tahoma;
+  font-size: 0.8rem;
+  color: white;
+  text-align: justify;
+  font-weight: lighter;
+}
+
+.news-date{
+  font-family: Tahoma;
+  font-size: 0.8rem;
+  color:  rgb(84, 85, 80);
+  text-align: left;
+  font-weight: lighter;
+  bottom: 0%;
+}
+
+
+
+
+/* character-region button */
+.character-container{
+  width:100%;
+  height:176vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.region{
+  height: 100%;
+}
+
+/* region Button */
+#mondstadt{
+  /* background-color: aquamarine; */
+  background-image: url(assets/charregion/Button\ CHaracter\ per\ region.png);
+  background-size: cover;
+  transition: ease-in-out 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+#mondstadt:hover{
+  background-image: url(assets/charregion/Property\ 1=Variant2.png);
+  margin:5px solid white;
+  background-size: cover;
+  transition: ease-in-out 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#liyue{
+  /* background-color: red; */
+  background-image: url(assets/charregion/2020021114275255981\ 2.png);
+  background-size: cover;
+  transition: ease-in-out 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#liyue:hover{
+  background-image: url(assets/charregion/Property\ 1=Variant3.png);
+  margin:5px solid white;
+  background-size: cover;
+  transition: ease-in-out 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#inazuma{
+  /* background-color: purple;*/
+  background-image: url(assets/charregion/2020021114275255981\ 3.png);
+  background-size: cover;
+  transition: ease-in-out 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#inazuma:hover{
+  background-image: url(assets/charregion/Property\ 1=Variant4.png);
+  margin:5px solid white;
+  background-size: cover;
+  transition: ease-in-out 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#sumeru{
+  /* background-color: green; */
+  background-image: url(assets/charregion/2020021114275255981\ 4.png);
+  background-size: cover;
+  transition: ease-in-out 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sumeru:hover{
+  background-image: url(assets/charregion/Property\ 1=Variant5.png);
+  margin:5px solid white;
+  background-size: cover;
+  transition: ease-in-out 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#coming-soon{
+  /* background-color: yellow; */
+  background-image: url(assets/charregion/Group\ 11.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer */
+.about{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+.link-sosmed{
+  background-color: #111;
+  display: flex;
+  padding-left: 7vw;
+}
+
+.link-sosmed .icon{
+  padding: 0.4vh 1vw;
+  display: flex;
+  gap: 2vw;
+}
+.link-sosmed .icon a{
+  color: grey;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 200ms;
+  
+}
+
+.link-sosmed .icon a:hover {
+  color: white;
+  transition: 200ms;
+}
+
+.about-info{
+  width: 100%;
+  height: auto;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap : 1.5vw;
+}
+
+.about-info .logo img{
+  margin-top: 7vh;
+}
+
+.about-info .link-PTAC {
+  width: 100%;
+  height: auto;
+}
+
+.link-PTAC ul{
+  display: flex;
+  gap: 4vw;
+  justify-content: center;
+}
+
+.link-PTAC ul li a{
+  font-size: 0.8rem;
+  font-family: Tahoma;
+  color: gray;
+  list-style: none;
+  transition: 300ms;
+}
+.link-PTAC ul li a:hover{
+  font-size: 0.8rem;
+  font-family: Tahoma;
+  color: white;
+  list-style: none;
+  transition: 300ms;
+}
+
+.teen-tag{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.teen-tag img{
+  width: 10%;
+  height: 10%;
+}
+
+.about-info .about-lisence{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-info .about-lisence p{
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.hoyoverse{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.hoyoverse img{
+  width: 20%;
+  height: 20%;
+}
+
+.copyright{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3vw;
+}
+
+.copyright p{
+  font-size: 0.8rem;
+  color: gray;
+}
+
+
+.scroll-container{
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+}

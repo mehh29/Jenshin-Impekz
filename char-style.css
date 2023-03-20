@@ -1,0 +1,412 @@
+@font-face {
+    font-family: sumana;
+    src: url("Font/Sumana/Sumana-Regular.ttf");
+}
+@font-face {
+    font-family: Tahoma;
+    src: url("Font/TahomaFont/Tahoma\ Regular\ font.ttf");
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tahoma;
+}
+
+/* navbar */
+.navigation-bar {
+    position: fixed;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 0.3vh 7vw;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+  
+.navbar-left .logo img {
+    width: 100%;
+}
+  
+.navbar-left {
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+}
+  
+.menu {
+    display: flex;
+    gap: 11vh;
+}
+  
+.navbar-left .menu a {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 300ms;
+}
+  
+.menu a:hover {
+    border-top: 0.2vw solid cyan;
+    border-bottom: 0 solid transparent;
+    opacity: 100%;
+    transition: 300ms;
+    text-shadow: 0px 0px 13px cyan;
+}
+  
+.navbar-right {
+    color: white;
+}
+  
+.navbar-right a {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-family: Tahoma;
+    gap: 1.5vw;
+}
+  
+.navbar-right a:hover {
+    color: gray;
+    transition: 100ms;
+}
+  
+.login a {
+    display: flex;
+    text-decoration: none;
+}
+.login a i {
+    font-size: 2.7rem;
+}
+
+/* character */
+
+.char-container{
+    width: 100%;
+    height: 100vh;
+
+}
+.background{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    
+}
+
+#mondstadt{
+    background-image: url(assets/charregion/mondstadt.png);
+
+}
+
+#liyue{
+    background-image: url(assets/charregion/liyue.png);
+
+}
+
+#inazuma{
+    background-image: url(assets/charregion/inazuma.png);
+
+}
+
+#sumeru{
+    background-image: url(assets/charregion/sumeru.png);
+
+}
+
+.char-image{
+    width: 100%;
+    height: 100%;
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.region-character-info-container{
+    /* background-color: aqua; */
+    gap: 7vw;
+    display: flex;
+    width: 120%;
+    height: 100vh;
+}
+
+.region{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 2vw;
+    position: relative;
+    padding-right: 4vw;
+    padding-top: 10vw;
+    /* background-color: blue; */
+    z-index: 5;
+}
+
+.region-box{
+    width: 140%;
+    display: flex;
+    align-items: center;
+    transition: ease 500ms;
+    padding: 0.7vw;
+}
+
+.region-box:hover{
+    background-image: linear-gradient(to right, black, transparent);
+    transition: ease 500ms;
+}
+
+.region-box img{
+    width: 20%;
+    height: auto;
+}
+
+.region-box p{
+    text-decoration: none;
+    color: white;
+}
+
+.character-info{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    /* justify-content: center; */
+    top: 10%;
+    z-index: 5;
+}
+
+
+
+.character-info .name{
+    /* background-color: green; */
+    height: 25%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+
+.name p{
+    font-family: sumana;
+    letter-spacing: 0.2rem;
+    font-size: 4rem;
+    color: white;
+    margin-left: 10%;
+}
+
+.name img {
+    position: absolute;
+    left: -1%;
+    opacity: 0.4;
+    width: 13%;
+}
+
+.description{
+    display: flex;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1vw 0;
+    padding-right: 1vw;
+    z-index: 5;
+}
+
+.description img{
+    padding: 0 1vw;
+    height: 1.5vw;
+}
+
+.description h2{
+    font-family: Tahoma;
+    font-size: 1rem;
+    color: white;
+    font-weight: lighter;
+    text-align: justify;
+}
+
+.char-bar-container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1vw 7vw;
+    z-index: 5;
+}
+
+
+.char-box{
+    background-color: #111;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #111;
+    transition: 300ms;
+}
+
+.char-box:hover{
+    border: 3px solid white;
+    background-color: white;
+    transition: 300ms;
+}
+
+.char-box:hover h2{
+    color: black;
+    transition: 300ms;
+}
+
+.char-box img{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+.char-box h2{
+    font-family: Tahoma;
+    font-weight: lighter;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.7vw;
+}
+
+
+/* Footer */
+.about{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+  
+.link-sosmed{
+    background-color: #111;
+    display: flex;
+    padding-left: 7vw;
+}
+  
+.link-sosmed .icon{
+    padding: 0.4vh 1vw;
+    display: flex;
+    gap: 2vw;
+}
+.link-sosmed .icon a{
+    color: grey;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: 200ms;
+    
+}
+ 
+.link-sosmed .icon a:hover {
+    color: white;
+    transition: 200ms;
+}
+  
+.about-info{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap : 1.5vw;
+}
+  
+.about-info .logo img{
+    margin-top: 7vh;
+}
+  
+.about-info .link-PTAC {
+    width: 100%;
+    height: auto;
+}
+  
+.link-PTAC ul{
+    display: flex;
+    gap: 4vw;
+    justify-content: center;
+}
+  
+.link-PTAC ul li a{
+    font-size: 0.8rem;
+    font-family: Tahoma;
+    color: gray;
+    list-style: none;
+    transition: 300ms;
+}
+.link-PTAC ul li a:hover{
+    font-size: 0.8rem;
+    font-family: Tahoma;
+    color: white;
+    list-style: none;
+    transition: 300ms;
+}
+  
+.teen-tag{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+ 
+.teen-tag img{
+    width: 10%;
+    height: 10%;
+}
+  
+.about-info .about-lisence{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.about-info .about-lisence p{
+    color: gray;
+    font-size: 0.8rem;
+}
+  
+.hoyoverse{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+  
+.hoyoverse img{
+    width: 20%;
+    height: 20%;
+}
+  
+.copyright{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3vw;
+}
+  
+.copyright p{
+    font-size: 0.8rem;
+    color: gray;
+}  
