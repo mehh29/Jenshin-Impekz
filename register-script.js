@@ -7,6 +7,11 @@ const nameInput = document.querySelector(".name-input") ? document.querySelector
 const ageInput = document.querySelector(".age-input") ? document.querySelector(".age-input") : 0
 const nameErrorMessage = document.querySelector(".name-error-message") ? document.querySelector(".name-error-message") : 0
 const ageErrorMessage = document.querySelector(".age-error-message") ? document.querySelector(".age-error-message") : 0
+const confirmPasswordInput = document.querySelector(".confirm-password-input") ? document.querySelector(".confirm-password-input") : 0
+const confirmPasswordErrorMessage = document.querySelector(".confirm-password-error-message") ? document.querySelector(".confirm-password-error-message") : 0
+const termsCheck = document.querySelector(".terms-check") ? document.querySelector(".terms-check") : 0
+const termsCheckLabel = document.querySelector(".terms") ? document.querySelector(".terms") : 0
+const termsErrorMessage = document.querySelector(".terms-error-message") ? document.querySelector(".terms-error-message") : 0
 
 function registerFormSubmit(event){
     event.preventDefault()
@@ -15,6 +20,8 @@ function registerFormSubmit(event){
     let isPasswordValid = true
     let isNameValid = true
     let isAgeValid = true
+    let isConfirmPasswordValid = true
+    let isTermsChecked = true
 
     // console.log(emailInput.value)
     if (!emailInput.value.includes("@gmail.com")) {
@@ -25,10 +32,17 @@ function registerFormSubmit(event){
 
         isEmailValid = false
     }
-    
+
+    if (confirmPasswordInput.value != passwordInput.value) {
+        confirmPasswordInput.classList.add("error-active")
+        confirmPasswordErrorMessage.innerHTML = "*Password Doesn't Match!"
+        confirmPasswordInput.value = ""
+
+        isConfirmPasswordValid= false
+    }
     if (passwordInput.value.length < 8) {
         passwordInput.classList.add("error-active")
-        passwordErrorMessage.innerHTML = "*Password Invalid!"
+        passwordErrorMessage.innerHTML = "*Password Must be at Least 8 Character!"
         passwordInput.value = ""
 
         isPasswordValid = false
@@ -36,18 +50,26 @@ function registerFormSubmit(event){
     
     if(nameInput.value == ""){
         nameInput.classList.add("error-active")
-        nameErrorMessage.innerHTML = "*Name Invalid!"
+        nameErrorMessage.innerHTML = "*Name Must be Filled"
         nameInput.value = ""
         isNameValid = false
     }
-    console.log((ageInput.value == "" || parseInt(ageInput.value) <= 0))
-    console.log(parseInt(ageInput.value) == NaN)
-    if((ageInput.value == "" || parseInt(ageInput.value) <= 0) || parseInt(ageInput.value) <= 0){
+
+    if(ageInput.value == "" || ageInput.value <= 0){
+        // console.log("asdf")
         ageInput.classList.add("error-active")
-        ageErrorMessage.innerHTML = "*Age Invalid!"
+        ageErrorMessage.innerHTML = "*Age can't! be Blank or Negative"
         ageInput.value = ""
         
         isAgeValid = false
+    }
+
+    if (termsCheck.checked == false) 
+    {
+        // console.log("test");
+        termsCheck.classList.add("error-active")
+        termsCheckLabel.classList.add("error-active")
+        isTermsChecked = false
     }
 
     if (isEmailValid) {
@@ -59,6 +81,11 @@ function registerFormSubmit(event){
         passwordInput.classList.remove("error-active")
         passwordErrorMessage.innerHTML = ""
     }
+
+    if (isConfirmPasswordValid) {
+        confirmPasswordInput.classList.remove("error-active")
+        confirmPasswordErrorMessage.innerHTML = ""
+    }
     
     if(isNameValid){
         nameInput.classList.remove("error-active")
@@ -69,8 +96,13 @@ function registerFormSubmit(event){
         ageInput.classList.remove("error-active")
         ageErrorMessage.innerHTML = ""
     }
+
+    if(isTermsChecked){
+        termsCheck.classList.remove("error-active")
+        termsCheckLabel.classList.remove("error-active")
+    }
     
-    if (isEmailValid && isPasswordValid&&isAgeValid && isNameValid) {
+    if (isEmailValid && isPasswordValid&&isAgeValid && isNameValid && isConfirmPasswordValid && isTermsChecked) {
         window.location = "login.html"
     }
 }

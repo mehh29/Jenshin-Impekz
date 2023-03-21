@@ -92,14 +92,14 @@ a{
     content: "";
     position: absolute;
     width: 100%;
-    height: 115vh;
+    height: 130vh;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.2);
   }
   
   .login-container {
     width: 100%;
-    height: 115vh;
+    height: 130vh;
     background-image: url("assets/Log In/background.png");
     background-size: cover;
     position: relative;
@@ -173,9 +173,14 @@ a{
     flex-direction: column;
     gap: 1vh;
   }
+  #term{
+    flex-direction: row;
+    align-items: center;
+  }
   
   .input-data label {
     font-size: 0.8rem;
+    
   }
   
   .social-media-list {
@@ -242,6 +247,23 @@ a{
   .age-input.error-active::placeholder {
     color: red;
   }
+
+  .confirm-password-input.error-active {
+    border: 1px solid red;
+  }
+
+  .confirm-password-input.error-active::placeholder{
+    color: red;
+  }
+
+  .terms.error-active::placeholder{
+    color: red;
+  }
+
+  .terms-check ~ .terms.error-active {
+    color: red;
+  }
+
   /* Footer */
 .about{
     width: 100%;

@@ -71,14 +71,31 @@
               </span>
             </div>
             <div class="input-data">
+              <label for="confirm-password">Confirm Password</label>
+              <input type="password" name="confirm-password" id="confirm-password" class="confirm-password-input" placeholder="Password">
+              <span class="confirm-password-error-message error-message">
+                <!-- p -->
+              </span>
+            </div>
+            <div class="input-data">
                 <label for="age">Age</label>
-                <input type="text" name="age" id="age" class="age-input" placeholder="Age">
+                <input type="number" name="age" id="age" class="age-input" placeholder="Age">
                 <span class="age-error-message error-message">
                   <!-- p -->
                 </span>
-              </div>
+            </div>
+            <div class="input-data" id="term">
+                <input type="checkbox" name="terms" id="terms" class="terms-check">
+                <label for="terms" class="terms">Agree with term & condition</label>
+                <span class="terms-error-message error-message">
+                  <!-- p -->
+                </span>
+            </div>
+
+
+
             <button type="submit">
-                Register
+              Register
             </button>
           </form>
           <p>Or register using social media</p>
